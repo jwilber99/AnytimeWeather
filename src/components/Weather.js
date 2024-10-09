@@ -49,27 +49,26 @@ const Weather = () => {
     fetchWeather(city);
   };
 
-  const saveAsFavorite = (e) => {
+  const saveAsFavorite = () => {
     const favoriteCityName = weatherData.location.name;
 
     // Save favorite city in local storage
-    if (e.target.checked) {
+    if (!isFavorite) {
       if (!favorites.includes(favoriteCityName)) {
         const updatedFavorites = [...favorites, favoriteCityName];
         setFavorites(updatedFavorites);
         localStorage.setItem("favorites", JSON.stringify(updatedFavorites));
         localStorage.setItem("favoriteCity", favoriteCityName); // Save as favorite city
         setFavoriteCity(favoriteCityName); // Set the favorite city state
+        setIsFavorite(true); // Mark as favorite
       }
     } else {
-      // Clear favorite city
-      localStorage.removeItem("favoriteCity");
-      setFavoriteCity("");
-      const updatedFavorites = favorites.filter(
-        (city) => city !== favoriteCityName
-      ); // Remove from favorites
+      // Remove favorite city
+      const updatedFavorites = favorites.filter((city) => city !== favoriteCityName); // Remove from favorites
       setFavorites(updatedFavorites);
       localStorage.setItem("favorites", JSON.stringify(updatedFavorites));
+      localStorage.removeItem("favoriteCity"); // Remove favorite city from storage
+      setFavoriteCity(""); // Clear the favorite city state
       setIsFavorite(false); // Uncheck checkbox
     }
   };
@@ -88,8 +87,6 @@ const Weather = () => {
     <div className="weather-container">
       <div className="weather-input">
         <div className="input-box">
-          {" "}
-          {/* Added white box for input */}
           <h1>Anytime Weather</h1>
           <h2>Enter city below</h2>
           <form onSubmit={handleSubmit}>
@@ -124,7 +121,7 @@ const Weather = () => {
           </form>
         </div>
         <div className="favorite-info">
-          <h3> * The current favorite city is: {favoriteCity || "None"}</h3>
+          <h3>* The current favorite city is: {favoriteCity || "None"}</h3>
           <button
             onClick={() => {
               setFavoriteCity("");
