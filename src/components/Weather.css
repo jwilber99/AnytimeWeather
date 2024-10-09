@@ -5,7 +5,7 @@
     background-color: #f0f8ff; /* Light blue background */
     min-height: 100vh;
 }
-  
+
 .weather-input {
     flex: 1; /* Take up more space on the left */
     display: flex;
@@ -13,32 +13,32 @@
     justify-content: center;
     align-items: center;
 }
-  
+
 .input-box { /* New style for the input box */
     background-color: white; /* White background for the box */
     padding: 20px;
     border-radius: 8px; /* Rounded corners */
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     text-align: center; /* Center text in the box */
-    width: 300px; /* Reduced width for the input box */
+    width: 300px; /* Fixed width for the input box */
 }
-  
+
 .weather-input h1 {
     font-size: 2.5rem;
     color: #1A23B3; /* Title color */
 }
-  
+
 .weather-input h2 {
     margin-bottom: 20px;
     color: #002855; /* Dark blue */
 }
-  
+
 .weather-input form {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-  
+
 .weather-input input {
     padding: 10px;
     margin-bottom: 10px;
@@ -46,7 +46,7 @@
     border-radius: 5px;
     width: 250px; /* Fixed width for input */
 }
-  
+
 .weather-input button {
     padding: 10px 15px;
     background-color: #f0a500; /* Button color */
@@ -56,19 +56,22 @@
     cursor: pointer;
     transition: background-color 0.3s;
 }
-  
+
 .weather-input button:hover {
     background-color: #d18a00; /* Darker button color on hover */
 }
-  
+
 .weather-result {
     flex: 1; /* Take up space on the right */
     display: flex;
     flex-direction: column; /* Align items vertically */
     align-items: center; /* Center the boxes */
+    justify-content: center; /* Center vertically */
     text-align: center;
+    margin: 20px; /* Margin around the weather result */
+    padding: 20px; /* Padding inside the weather result */
 }
-  
+
 .weather-display {
     background-color: white;
     padding: 20px;
@@ -76,16 +79,18 @@
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     width: 100%; /* Make it wider */
     margin-bottom: 20px; /* Space below current weather */
+    margin-top: 20px; /* Space above the weather display */
 }
-  
+
+
 .current-weather {
     margin-bottom: 20px; /* Space below current weather */
 }
-  
+
 .current-weather img {
     width: 100px; /* Adjust image size */
 }
-  
+
 .forecast {
     background-color: white;
     padding: 20px;
@@ -93,38 +98,54 @@
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     width: 100%; /* Make it wider */
 }
-  
+
 .forecast-days {
     display: flex;
     justify-content: space-between; /* Distribute forecast items horizontally */
     margin-top: 10px; /* Space between heading and forecast */
 }
-  
+
 .forecast-day {
     margin: 0 10px; /* Space between forecast items */
     text-align: center; /* Center align forecast day */
 }
-  
+
 .loader {
     font-size: 1.5rem;
     color: #1A23B3;
 }
-  
+
 .error {
     color: red;
     font-size: 1rem;
 }
-  
+
 .unit-selector {
     display: flex;
     justify-content: center;
     margin-top: 10px;
 }
-  
+
 .unit-selector label {
     margin: 0 2px; /* Adjust spacing between the buttons */
 }
-  
+
 .favorite-info button {
     margin-left: 10px; /* Space between the two buttons */
 }
+
+.favorite-button {
+    padding: 10px 15px;
+    background-color: #f0a500; /* Button color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px; /* Add some space above the button */
+  }
+  
+  .favorite-button:hover {
+    background-color: #d18a00; /* Darker button color on hover */
+  }
+  
