@@ -82,7 +82,6 @@
     margin-top: 20px; /* Space above the weather display */
 }
 
-
 .current-weather {
     margin-bottom: 20px; /* Space below current weather */
 }
@@ -143,9 +142,8 @@
     cursor: pointer;
     transition: background-color 0.3s;
     margin-top: 10px; /* Add some space above the button */
-  }
-  
-  .favorite-button:hover {
+}
+
+.favorite-button:hover {
     background-color: #d18a00; /* Darker button color on hover */
-  }
-  
+}
